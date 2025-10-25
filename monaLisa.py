@@ -25,6 +25,8 @@ for keystroke in keystrokes['allOfThingies']:
             for char in str(keystroke[1]):
                 if (keyboard.is_pressed('q')): break
                 match char:
+                    case '\t':
+                        keyboard.press_and_release("tab")
                     case '\n':
                         keyboard.press_and_release("enter")
                     case '.':
@@ -49,6 +51,10 @@ for keystroke in keystrokes['allOfThingies']:
                         keyboard.press("shift")
                         keyboard.press_and_release("3")
                         keyboard.release("shift")
+                    case 'B':
+                        keyboard.press("shift")
+                        keyboard.press_and_release("b")
+                        keyboard.release("shift")
                     case _:
                         if char.isupper():
                             keyboard.press("shift")
@@ -58,4 +64,4 @@ for keystroke in keystrokes['allOfThingies']:
                 time.sleep(0.05)
         case 5:
             mouse.move(keystroke[1],keystroke[2], absolute = keystroke[3])
-    time.sleep(0.05)
+    time.sleep(0.1)
