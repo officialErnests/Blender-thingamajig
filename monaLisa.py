@@ -11,18 +11,19 @@ for keystroke in keystrokes['allOfThingies']:
     if (keyboard.is_pressed('q')): break
     match keystroke[0]:
         case 0:
-            keyboard.press_and_release(keystroke[2])
+            keyboard.press_and_release(keystroke[1])
         case 1:
-            print(keystroke[2])
-            keyboard.write(keystroke[2], float(keystroke[3]))
+            keyboard.write(keystroke[1], float(keystroke[2]))
         case 2:
             mouse.click('left')
         case 3:
             mouse.click('right')
         case 4:
-            for char in str(keystroke[2]):
+            for char in str(keystroke[1]):
                 if (keyboard.is_pressed('q')): break
                 match char:
+                    case ' ':
+                        keyboard.press_and_release("enter")
                     case '.':
                         keyboard.press_and_release("dot")
                     case '(':
@@ -35,7 +36,7 @@ for keystroke in keystrokes['allOfThingies']:
                         keyboard.release("shift")
                     case '_':
                         keyboard.press("shift")
-                        keyboard.press_and_release("-")
+                        keyboard.press_and_release("underscore")
                         keyboard.release("shift")
                     case ')':
                         keyboard.press("shift")
@@ -47,7 +48,7 @@ for keystroke in keystrokes['allOfThingies']:
                         keyboard.release("shift")
                     case _:
                         keyboard.press_and_release(char)
-                time.sleep(float(keystroke[3]))
+                time.sleep(0.05)
         case 5:
-            mouse.move(keystroke[2],keystroke[3], absolute = keystroke[4])
-    time.sleep(float(keystroke[1]))
+            mouse.move(keystroke[1],keystroke[2], absolute = keystroke[3])
+    time.sleep(0.05)
