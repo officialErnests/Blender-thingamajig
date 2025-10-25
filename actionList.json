@@ -1,0 +1,23 @@
+{
+    "allOfThingies": [
+        [2,0.1],
+        [4,0.1,"ax", 0.05],
+        [0,0.1,"enter"],
+        [0,0.1,"shift+a"],
+        [4,0.1,"cube", 0.05],
+        [0,0.1,"enter"],
+        [0,0.1,"s"],
+        [0,0.1,"shift+z"],
+        [4,0.1,"10",0.05],
+        [0,0.1,"enter"],
+        [4,0.1,"gz-1",0.05],
+        [0,0.1,"enter"],
+        [4,0.1,"z2",0.05],
+        [5,0.1,0,100, false],
+        [2,0.1],
+        [4,0.1,"ground_mat = bpy.data.materials.new(name='Material')",0.01],
+        [0,0.1,"enter"],
+        [4,0.1,"bpy.context.selected_objects[0].data.materials.append(ground_mat)",0.02],
+        [0,0.1,"enter"]
+    ]
+}
